@@ -3,68 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jastar Apartments — современное общежитие в центре Алматы</title>
+    <title>Jastar Apartments — Современное общежитие в центре Алматы</title>
+    <meta name="description" content="Уютные комнаты для студентов в Jastar Apartments (ул. Сатпаева, 7А). Круглосуточная охрана, Wi-Fi и оплата через Kaspi. Забронируйте сейчас!">
+    <meta name="keywords" content="общежитие Алматы, студенческое жильё Алматы, Jastar Apartments, Сатпаева 7А, комнаты для студентов">
+    
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet"> </head>
-<body class="bg-gray-50 font-sans">
+    <link href="/css/styles.css" rel="stylesheet"> 
     
-    <header class="bg-white shadow-md sticky top-0 z-10">
+    <script src="https://unpkg.com/lucide@latest"></script> 
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    
+    <header class="bg-white shadow-lg sticky top-0 z-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-blue-600">Jastar Apartments</a>
-            <nav class="space-x-4">
-                <a href="/rooms.html" class="text-gray-600 hover:text-blue-600">Комнаты</a>
-                <a href="/faq.html" class="text-gray-600 hover:text-blue-600">FAQ</a>
-                <a href="/login.html" class="px-3 py-1 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition">Вход / ЛК</a>
+            <a href="/" class="text-3xl font-extrabold text-blue-600 tracking-tight transition hover:opacity-80">
+                Jastar Apartments
+            </a>
+            <nav class="space-x-6 hidden md:flex items-center">
+                <a href="/rooms.html" class="nav-link text-lg text-gray-700 hover:text-blue-600 transition duration-200">Комнаты и Цены</a>
+                <a href="/faq.html" class="nav-link text-lg text-gray-700 hover:text-blue-600 transition duration-200">Вопросы (FAQ)</a>
+                <a href="/login.html" class="px-5 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition btn-primary">
+                    Вход / Личный кабинет
+                </a>
             </nav>
+            <button class="md:hidden p-2 rounded-md hover:bg-gray-100 transition">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="bg-white py-16 sm:py-24 border-b">
+        <section class="hero-content bg-gradient-to-r from-blue-50 to-white py-20 sm:py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-                        Jastar Apartments — <span class="text-blue-600">Ваш новый дом</span> в Алматы
+                    <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                        Jastar Apartments — <span class="text-blue-600">Начни студенческую жизнь</span> с комфорта
                     </h1>
-                    <p class="mt-6 text-xl text-gray-500">
-                        Уютные комнаты для студентов, круглосуточная охрана, быстрый Wi-Fi и удобная оплата через Kaspi.
+                    <p class="mt-6 text-xl text-gray-600 max-w-lg">
+                        Новое, современное общежитие в центре Алматы (ул. Сатпаева, 7А). Бронирование онлайн, чистота и безопасность.
                     </p>
                     <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="/rooms.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-                            Посмотреть комнаты
+                        <a href="/rooms.html" class="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl shadow-xl text-white bg-blue-600 hover:bg-blue-700 btn-primary">
+                            Забронировать место →
                         </a>
-                        <a href="/login.html" class="inline-flex items-center justify-center px-8 py-3 border border-gray-200 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                            Личный кабинет
+                        <a href="#features" class="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl text-blue-600 bg-white border border-blue-200 hover:bg-blue-50 transition">
+                            Узнать больше
                         </a>
                     </div>
                 </div>
-                <div class="shadow-2xl rounded-lg overflow-hidden">
-                    <img src="/images/hero.jpg" alt="Современный фасад Jastar Apartments" class="w-full h-96 object-cover">
+                <div class="shadow-2xl rounded-2xl overflow-hidden transform rotate-1 transition duration-500 hover:rotate-0 hover:scale-105">
+                    <img src="/images/hero.jpg" alt="Современный фасад и интерьер Jastar Apartments" class="w-full h-[450px] object-cover">
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-gray-50">
+        <section id="features" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Почему выбирают нас?</h2>
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Охрана 24/7 ...</div>
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Быстрый Wi-Fi ...</div>
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Оплата через Kaspi ...</div>
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Центр города ...</div>
+                <h2 class="text-4xl font-extrabold text-gray-900 text-center mb-16">Наш Комфорт для Вашего Успеха</h2>
+                <div class="grid md:grid-cols-4 gap-10">
+                    
+                    <div class="feature-card p-8 bg-gray-50 text-center">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl text-gray-900">Безопасность 24/7</h3>
+                        <p class="text-base text-gray-500 mt-2">Круглосуточная охрана и видеонаблюдение по всему периметру.</p>
+                    </div>
+                    
+                    <div class="feature-card p-8 bg-gray-50 text-center">
+                        <i data-lucide="wifi" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl text-gray-900">Быстрый Wi-Fi</h3>
+                        <p class="text-base text-gray-500 mt-2">Высокоскоростной интернет для стриминга, учёбы и связи.</p>
+                    </div>
+                    
+                    <div class="feature-card p-8 bg-gray-50 text-center">
+                        <i data-lucide="wallet" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl text-gray-900">Удобная оплата</h3>
+                        <p class="text-base text-gray-500 mt-2">Оплата проживания через Kaspi QR / Kaspi Pay.</p>
+                    </div>
+                    
+                    <div class="feature-card p-8 bg-gray-50 text-center">
+                        <i data-lucide="map-pin" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl text-gray-900">Идеальный Центр</h3>
+                        <p class="text-base text-gray-500 mt-2">Рядом с ведущими вузами, транспортом и инфраструктурой.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        <section class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-gray-900">Выбери Свою Комнату</h2>
+                    <p class="mt-3 text-lg text-gray-600">Предлагаем комфортное проживание по 2 или 3 человека.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="rooms-overview">
+                    <p class="col-span-3 text-center text-gray-500">Загрузка актуальных предложений...</p>
+                    </div>
+                
+                <div class="text-center mt-12">
+                    <a href="/rooms.html" class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-lg text-white bg-yellow-500 hover:bg-yellow-600 transition btn-primary">
+                        Посмотреть все 12 вариантов
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Важные Условия Заселения</h2>
+                    <ul class="space-y-4 text-lg text-gray-600">
+                        <li class="flex items-start">
+                            <i data-lucide="calendar-check" class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <strong>Время:</strong> Заселение с 09:00 до 17:00 (Пн-Пт). Приезд в нерабочее время — по согласованию.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="wallet" class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <strong>Депозит:</strong> Обязательный возвратный депозит — <span class="font-extrabold text-red-600">40 000 ₸</span>.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="banknote" class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <strong>Оплата:</strong> Ежемесячно через <span class="font-bold">приложение Kaspi</span>.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="phone" class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <strong>Контакты:</strong> По вопросам бронирования звоните: <a href="tel:+77074986836" class="text-blue-600 hover:text-blue-700 font-semibold">+7 707 498 6836</a>.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Мы на Карте (Алматы)</h2>
+                    <div class="bg-gray-200 h-80 rounded-xl shadow-lg flex items-center justify-center text-gray-500">
+                        [Здесь будет карта 2GIS/Yandex Maps. Адрес: ул. Сатпаева, 7А]
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2024 Jastar Apartments. Все права защищены. Адрес: ул. Сатпаева, 7А, Алматы.</p>
+    <footer class="bg-gray-900 text-white py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+            
+            <div>
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Jastar Apartments</h3>
+                <p class="text-sm text-gray-400">Современное студенческое жильё с фокусом на комфорт, безопасность и удобство оплаты через Kaspi.</p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-blue-600 pb-1">Навигация</h4>
+                <ul class="space-y-2">
+                    <li><a href="/rooms.html" class="text-gray-400 hover:text-white transition">Комнаты и Цены</a></li>
+                    <li><a href="/login.html" class="text-gray-400 hover:text-white transition">Личный кабинет</a></li>
+                    <li><a href="/faq.html" class="text-gray-400 hover:text-white transition">FAQ / Помощь</a></li>
+                    <li><a href="/terms.html" class="text-gray-400 hover:text-white transition">Условия проживания</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-blue-600 pb-1">Контакты</h4>
+                <p class="text-gray-400">Адрес: ул. Каныша Сатпаева, 7А, Алматы</p>
+                <p class="text-gray-400 mt-2">Телефон: <a href="tel:+77074986836" class="text-blue-400 hover:text-white transition">+7 707 498 6836</a></p>
+                <p class="text-gray-400">Email: support@jastar.kz</p>
+            </div>
+
+             <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-blue-600 pb-1">Мы в соцсетях</h4>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition" title="Instagram"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition" title="2GIS"><i data-lucide="map" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition" title="Telegram"><i data-lucide="send" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="mt-8 pt-4 border-t border-gray-800 text-center">
+            <p class="text-sm text-gray-500">&copy; 2024 Jastar Apartments. Разработано с ♥ в Алматы.</p>
         </div>
     </footer>
 
     <script type="module" src="/js/supabase.js"></script>
     <script type="module" src="/js/auth.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
