@@ -2,101 +2,121 @@
 /* 1. ИМПОРТЫ И БАЗОВЫЕ НАСТРОЙКИ */
 /* ========================================================= */
 
-/* Импорт современного, чистого шрифта Google Font */
+/* Современный шрифт Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-/* Применение шрифта ко всему телу */
-body {
-    font-family: 'Inter', sans-serif;
-    /* Устанавливаем плавность для всех изменений (например, hover) */
-    transition: all 0.3s ease-in-out;
-}
 
 /* Применение базовых директив Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ========================================================= */
-/* 2. ПЕРЕОПРЕДЕЛЕНИЕ СТАНДАРТНЫХ КЛАССОВ И КОМПОНЕНТЫ */
-/* ========================================================= */
-
-/* Улучшенный фокус для доступности и стиля */
-*:focus {
-    outline: 3px solid rgba(59, 130, 246, 0.5); /* blue-500 с прозрачностью */
-    outline-offset: 2px;
-    border-radius: 4px;
+/* Основные стили body */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1f2937; /* Глубокий серый */
+    /* Устанавливаем плавность для всех изменений */
+    transition: all 0.3s ease-in-out;
 }
 
-/* Акцентные кнопки */
+/* ========================================================= */
+/* 2. ПЕРЕОПРЕДЕЛЕНИЕ КЛАССОВ И АКЦЕНТЫ */
+/* ========================================================= */
+
+/* Улучшенный фокус (Accessibility) */
+*:focus {
+    outline: 3px solid rgba(251, 191, 36, 0.7); /* Яркий, заметный желтый фокус */
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* Акцентные кнопки (CTA, синие) */
 .btn-primary {
-    /* Дополнительные стили для кнопки bg-blue-600 */
-    position: relative;
-    overflow: hidden;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+    /* Фон: Синий */
+    background-color: theme('colors.blue.600');
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 12px; /* Более мягкие углы */
 }
 
 .btn-primary:hover {
     background-color: theme('colors.blue.700');
-    /* Эффект легкого "нажатия" */
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px); /* Легкий подъем */
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3); /* Глубокая синяя тень */
 }
 
-/* Акцентные ссылки (для навигации) */
-.nav-link:hover {
-    color: theme('colors.blue.600');
-    transition: color 0.2s ease;
-    border-bottom: 2px solid theme('colors.blue.400');
-    padding-bottom: 2px;
-}
-
-/* ========================================================= */
-/* 3. СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ БЛОКОВ */
-/* ========================================================= */
-
-/* Стиль для Hero Section */
-.hero-content {
-    /* Градиентный фон для секции, если не используется белая */
-    /* background: linear-gradient(180deg, theme('colors.gray.50'), theme('colors.white')); */
-}
-
-/* Стиль для карточек (Комнаты, Преимущества) */
-.room-card, .feature-card {
-    /* Слегка округленные углы */
+/* Вторичные кнопки (Акцентный оранжевый) */
+.btn-secondary {
+    /* Фон: Акцентный оранжевый/желтый */
+    background-color: theme('colors.amber.500');
+    color: theme('colors.gray.900');
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     border-radius: 12px;
-    /* Плавный эффект тени при наведении */
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary:hover {
+    background-color: theme('colors.amber.600');
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4); /* Теплая тень */
+}
+
+
+/* ========================================================= */
+/* 3. СТИЛИ КАРТОЧЕК И ЭФФЕКТЫ "ГЛУБИНЫ" */
+/* ========================================================= */
+
+/* Стиль для Header */
+header {
+    /* Тонкая, едва заметная тень для "плавающего" эффекта */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Стиль для Карточек (Комнаты, Преимущества, feature-card, room-card) */
+.room-card, .feature-card {
+    background-color: white;
+    border-radius: 16px; /* Более крупные, мягкие углы */
+    border: 1px solid theme('colors.gray.100');
+    /* Изначальная тень - мягкая */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Плавная кривая анимации */
+    overflow: hidden; /* Важно для изображений */
 }
 
 .room-card:hover, .feature-card:hover {
-    /* Увеличение тени и легкий подъем */
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-    transform: translateY(-3px);
+    /* При наведении - подъем и более глубокая, но мягкая тень */
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Заметный эффект глубины */
+    border-color: theme('colors.blue.300');
 }
 
+/* Эффект для изображения в карточке */
 .room-card img {
-    /* Плавное увеличение изображения при наведении */
-    transition: transform 0.5s ease;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    transition: transform 0.6s ease;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .room-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03); /* Легкое увеличение изображения */
 }
 
-/* Стиль для полей ввода в формах (Login/Signup) */
+/* ========================================================= */
+/* 4. СТИЛИ ФОРМ И ПОЛЕЙ ВВОДА */
+/* ========================================================= */
+
 input[type="email"], 
 input[type="password"], 
 input[type="text"],
 input[type="date"] {
-    /* Красивая тонкая рамка */
-    border: 1px solid theme('colors.gray.300');
-    border-radius: 6px;
-    padding: 10px 14px;
+    border: 2px solid theme('colors.gray.300');
+    border-radius: 8px;
+    padding: 12px 16px;
     width: 100%;
+    /* Дополнительная тень для эффекта "вдавленности" */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08); 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -104,23 +124,36 @@ input[type="email"]:focus,
 input[type="password"]:focus, 
 input[type="text"]:focus,
 input[type="date"]:focus {
-    /* Синяя рамка и легкая тень при фокусе */
+    /* При фокусе: яркая синяя рамка и легкое удаление "вдавленной" тени */
     border-color: theme('colors.blue.500');
-    box-shadow: 0 0 0 1px theme('colors.blue.500');
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-/* Улучшение стиля для скроллбара (только для Webkit) */
-/* Это добавляет немного современного вида, но не обязательно для работы */
-/* ::-webkit-scrollbar {
-    width: 8px;
+/* ========================================================= */
+/* 5. УНИКАЛЬНЫЕ ДЕТАЛИ (НАПРИМЕР, ДЛЯ HERO-БАННЕРА) */
+/* ========================================================= */
+
+/* Динамичный заголовок */
+.hero-content h1 {
+    line-height: 1.15;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: theme('colors.blue.300');
+/* Стиль для секции с условиями (Важные Условия Заселения) */
+.info-list li {
+    background-color: theme('colors.white');
+    padding: 15px;
     border-radius: 10px;
+    border-left: 5px solid theme('colors.blue.500');
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-::-webkit-scrollbar-track {
-    background: theme('colors.gray.100');
-} */
+.info-list li:hover {
+    border-left-color: theme('colors.amber.500');
+    transform: translateX(3px);
+}
 
+/* Стиль для футера */
+footer {
+    border-top: 5px solid theme('colors.blue.700'); /* Акцентная полоса */
+}
