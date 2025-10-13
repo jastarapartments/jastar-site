@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комнаты и Тарифы — Jastar Apartments</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-blue-600">Jastar Apartments</a>
+            <nav class="space-x-4">
+                <a href="/rooms.html" class="text-blue-600 font-semibold">Комнаты</a>
+                <a href="/faq.html" class="text-gray-600 hover:text-blue-600">FAQ</a>
+                <a href="/login.html" class="px-3 py-1 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition">Вход / ЛК</a>
+            </nav>
+        </div>
+    </header>
 
+    <main class="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-extrabold text-gray-900 mb-8">Наши Комнаты и Тарифы</h1>
+        
+        <div id="rooms-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            </div>
+
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-400 text-blue-800">
+            <p><strong>Важно:</strong> При заселении вносится депозит 40 000 ₸. Оплата проживания — ежемесячно.</p>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Jastar Apartments. Все права защищены. Адрес: ул. Сатпаева, 7А, Алматы.</p>
+        </div>
+    </footer>
+    
+    <script type="module" src="/js/supabase.js"></script>
+    <script type="module" src="/js/ui.js"></script>
+</body>
+</html>
