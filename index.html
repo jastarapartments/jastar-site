@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jastar Apartments — современное общежитие в центре Алматы</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet"> </head>
+<body class="bg-gray-50 font-sans">
+    
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-blue-600">Jastar Apartments</a>
+            <nav class="space-x-4">
+                <a href="/rooms.html" class="text-gray-600 hover:text-blue-600">Комнаты</a>
+                <a href="/faq.html" class="text-gray-600 hover:text-blue-600">FAQ</a>
+                <a href="/login.html" class="px-3 py-1 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition">Вход / ЛК</a>
+            </nav>
+        </div>
+    </header>
 
+    <main>
+        <section class="bg-white py-16 sm:py-24 border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+                        Jastar Apartments — <span class="text-blue-600">Ваш новый дом</span> в Алматы
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-500">
+                        Уютные комнаты для студентов, круглосуточная охрана, быстрый Wi-Fi и удобная оплата через Kaspi.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/rooms.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
+                            Посмотреть комнаты
+                        </a>
+                        <a href="/login.html" class="inline-flex items-center justify-center px-8 py-3 border border-gray-200 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                            Личный кабинет
+                        </a>
+                    </div>
+                </div>
+                <div class="shadow-2xl rounded-lg overflow-hidden">
+                    <img src="/images/hero.jpg" alt="Современный фасад Jastar Apartments" class="w-full h-96 object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Почему выбирают нас?</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Охрана 24/7 ...</div>
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Быстрый Wi-Fi ...</div>
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Оплата через Kaspi ...</div>
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">... Центр города ...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Jastar Apartments. Все права защищены. Адрес: ул. Сатпаева, 7А, Алматы.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/supabase.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+</body>
+</html>
