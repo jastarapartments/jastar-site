@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Вход — Jastar Apartments</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вход / Регистрация — Jastar Apartments</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
   <script type="module" src="./js/supabase.js"></script>
+  <script type="module" src="./js/auth.js"></script>
 </head>
-<body class="flex justify-center items-center h-screen bg-gray-100">
-  <div class="bg-white p-6 rounded-xl shadow-lg w-96">
-    <h1 class="text-2xl font-bold mb-4 text-center">Вход</h1>
-    <input id="email" type="email" placeholder="Email" class="w-full border p-2 mb-3 rounded">
-    <input id="password" type="password" placeholder="Пароль" class="w-full border p-2 mb-3 rounded">
-    <button id="loginBtn" class="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">Войти</button>
+
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <div class="bg-gray-800 p-8 rounded-2xl w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-6">Jastar Apartments</h1>
+
+    <form id="auth-form" class="flex flex-col space-y-3">
+      <input id="email" type="email" placeholder="Email"
+        class="p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none" required />
+      <input id="password" type="password" placeholder="Пароль"
+        class="p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none" required />
+
+      <button id="auth-btn" type="submit"
+        class="bg-yellow-500 hover:bg-yellow-600 py-2 rounded text-white font-semibold">Войти</button>
+    </form>
+
+    <p class="text-center mt-4 text-gray-400">
+      <span id="toggle-text">Нет аккаунта?</span>
+      <button id="toggle-btn" class="text-yellow-400 hover:underline">Зарегистрироваться</button>
+    </p>
   </div>
 
   <script type="module">
-    import { supabase } from './js/supabase.js';
+    import { loginUser, registerUser } from "./js/auth.js";
 
-    document.getElementById('loginBtn').addEventListener('click', async () => {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
+    let isLogin = true;
+    const form = document.getElementById("auth-form");
+    const btn = document.getElementById("auth-btn");
+    const toggleBtn = document.getElementById("toggle-btn");
+    const toggleText = document.getElementById("toggle-text");
 
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) {
-        alert(error.message);
+    toggleBtn.addEventListener("click", () => {
+      isLogin = !isLogin;
+      btn.textContent = isLogin ? "Войти" : "Зарегистрироваться";
+      toggleText.textContent = isLogin ? "Нет аккаунта?" : "Уже есть аккаунт?";
+      toggleBtn.textContent = isLogin ? "Зарегистрироваться" : "Войти";
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (isLogin) {
+        await loginUser(email, password);
       } else {
-        window.location.href = 'profile.html';
+        await registerUser(email, password);
       }
     });
   </script>
 </body>
 </html>
-
